@@ -19,6 +19,14 @@ public class ProductData {
         this.companyName = companyName;
         this.unitPrice = unitPrice;
     }
+    
+    ProductData (String productId, String productName, int supplierId, String companyName) {
+        this.productId    = productId;
+        this.productName  = productName;
+        this.supplierId   = supplierId;
+        this.companyName = companyName;
+    
+    }
     public static Vector<ProductData> getProductList(Connection connection) {
         Vector<ProductData> vec = new Vector<ProductData>();
         String sql = "Select ProductId, ProductName, Products.SupplierId as SupplierId, CompanyName, UnitPrice FROM Products, Suppliers";
